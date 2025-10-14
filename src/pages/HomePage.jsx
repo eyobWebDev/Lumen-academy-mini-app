@@ -7,18 +7,7 @@ export default function HomePage(){
     const navigate = useNavigate()
     const [year, setYear] = useState(2017)   
     const [subject, setSubject] = useState("")   
-    const { search } = useLocation()
-    const [questions, setQuestions] = useState([])
-    const query = new URLSearchParams(search);
-    const unit_id = query.get("unit_id");
-    const y = query.get("year");
-    const s = query.get("subject");
-
-    useEffect(() => {
-      if(y && s){
-         navigate(`/question?year=${y}&subject=${s}`)
-       }
-    }, [])
+    
 
     return <div className="flex flex-col">
         <div className="flex w-full justify-between items-center sticky top-0 shadow-sm shadow-slate-700 p-2 bg-base-300">
