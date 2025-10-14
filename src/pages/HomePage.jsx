@@ -13,11 +13,11 @@ export default function HomePage(){
     const y = query.get("year");
     const s = query.get("subject");
 
-    useEffect(() => {
+    
       if(y && s){
-          navigate(`/question?year=${y}&subject=${s}`)
-       }
-    }, [])
+         return navigate(`/question?year=${y}&subject=${s}`)
+      }
+    
 
     return <div className="flex flex-col">
         <div className="flex w-full justify-between items-center sticky top-0 shadow-sm shadow-slate-700 p-2 bg-base-300">
