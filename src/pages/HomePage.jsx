@@ -7,16 +7,6 @@ export default function HomePage(){
     const navigate = useNavigate()
     const [year, setYear] = useState(2017)   
     const [subject, setSubject] = useState("")   
-    const { search } = useLocation()
-    const [questions, setQuestions] = useState([])
-    const query = new URLSearchParams(search);
-    const y = query.get("year");
-    const s = query.get("subject");
-
-    
-      if(y){
-         return navigate(`/question?year=${y}&subject=${s}`)
-      }
     
 
     return <div className="flex flex-col">
