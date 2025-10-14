@@ -11,12 +11,12 @@ export default function HomePage(){
     const [questions, setQuestions] = useState([])
     const query = new URLSearchParams(search);
     const unit_id = query.get("unit_id");
-    const year = query.get("year");
-    const subject = query.get("subject");
+    const y = query.get("year");
+    const s = query.get("subject");
 
     useEffect(() => {
-       if(year && subject){
-         navigate(`/question?year=${year}&subject=${subject}`)
+      if(y && s){
+         navigate(`/question?year=${y}&subject=${s}`)
        }
     }, [])
 
