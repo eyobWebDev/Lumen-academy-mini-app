@@ -1,9 +1,12 @@
-import { Menu } from "lucide-react"
+import { ArrowRight, Menu } from "lucide-react"
 import LumenAcademyLogo from "../assets/lumen_academy_logo.jpg"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 export default function HomePage(){
     const navigate = useNavigate()
+    const [year, setYear] = useState(2017)   
+    const [subject, setSubject] = useState("")   
 
     return <div className="flex flex-col">
         <div className="flex w-full justify-between items-center sticky top-0 shadow-sm shadow-slate-700 p-2 bg-base-300">
@@ -16,6 +19,12 @@ export default function HomePage(){
             </div>
 
             <div><Menu size={15} /></div>
+        </div>
+
+        <div className="flex items-center mt-2 gap-3">
+            <input type="text" className="input input-bordered input-sm" placeholder="subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
+            <input type="number" className="input input-bordered input-sm" placeholder="year" value={year} onChange={(e) => setYear(e.target.value)}/>
+            <button onClick={() => navigate(`/question?year=${year}&subject=${subject}`)} className="btn btn-info btn-sm flex items-center gap-3">Go <ArrowRight size={15} /></button>
         </div>
 
         <div className="flex text-center justify-center overflow-hidden h-[90vh] flex-col gap-7">
