@@ -1,12 +1,24 @@
 import { ArrowRight, Menu } from "lucide-react"
 import LumenAcademyLogo from "../assets/lumen_academy_logo.jpg"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function HomePage(){
     const navigate = useNavigate()
     const [year, setYear] = useState(2017)   
     const [subject, setSubject] = useState("")   
+    const { search } = useLocation()
+    const [questions, setQuestions] = useState([])
+    const query = new URLSearchParams(search);
+    const unit_id = query.get("unit_id");
+    const year = query.get("year");
+    const subject = query.get("subject");
+
+    useEffect(() => {
+       if(year && subject){
+         navigate(`/question?year=${year}&subject=${subject}`)
+       }
+    }, [])
 
     return <div className="flex flex-col">
         <div className="flex w-full justify-between items-center sticky top-0 shadow-sm shadow-slate-700 p-2 bg-base-300">
