@@ -14,7 +14,7 @@ export default function HomePage(){
     const s = query.get("subject");
 
     
-      if(y != null){
+      if(y){
          return navigate(`/question?year=${y}&subject=${s}`)
       }
     
