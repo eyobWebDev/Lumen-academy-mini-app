@@ -41,8 +41,8 @@ export default function QuestionDisplayPage() {
                     <Loader2 className="animate-spin" />
                     <div>Getting all questions...</div>
             </div> :
-                questions.map(question => {
-                    return <QuestionCard q={question} />
+                questions.map((question, i) => {
+                    return <QuestionCard q={question} number={i} />
                 })
             }
 
