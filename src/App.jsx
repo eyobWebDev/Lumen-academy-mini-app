@@ -13,7 +13,7 @@ function App() {
 
 
   return (
-    <div className='font-mono bg-base-100 text-base'>
+    <div className='bg-base-100 text-base'>
       
       <Routes>
         <Route path='/' element={<HomePage />} />
