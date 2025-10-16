@@ -5,11 +5,11 @@ import { Trash2 } from "lucide-react"
 export default function QuestionCard({q, state}){
     const {removeQuestion} = useQuestionStore()
 
-    return <div className={`flex ${state ? "" : "border border-slate-500"} bg-base-100 rounded-xl p-4 shadow-lg flex-col gap-3`}>
+    return <div className={`flex ${state ? "" : "m-1 bg-base-300"} bg-base-100 rounded-xl p-5 shadow shadow-slate-700 flex-col gap-3`}>
         {/* question */}
         <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center">
-                <div className="text-lg font-semibold">Question</div>
+                <div className="text-lg font-bold">Question</div>
                 {state && <div><button onClick={() => removeQuestion(q.question_text)} className="btn btn-xs btn-error"><Trash2 size={10} />Remove</button></div>}
             </div>
             <div>{q.question_rich.question || ""}</div>
@@ -20,7 +20,7 @@ export default function QuestionCard({q, state}){
             <div className="text-sm font-bold">Answer</div>
             <div className="flex flex-col gap-2">
                 {q.question_rich.options?.map(option => {
-                    return <div className="flex items-center gap-2">
+                    return <div className="flex gap-2">
                         <div className="font-semibold">{option.label}.</div>
                         <div>{option.text}</div>
                     </div>
@@ -31,7 +31,7 @@ export default function QuestionCard({q, state}){
         <hr className="opacity-50" />
 
         {/* correct answer */}
-        <div className="flex p-2 items-center gap-3">
+        <div className="flex p-2 items-center font-semibold gap-3">
             <div>{q.question_rich.correct_answer || ""}</div>
         </div>
 
