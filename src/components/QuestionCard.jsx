@@ -2,14 +2,14 @@ import { useQuestionStore } from "@/store/useQuestionStore"
 import { Trash2 } from "lucide-react"
 
 
-export default function QuestionCard({q, state}){
+export default function QuestionCard({q, state, number}){
     const {removeQuestion} = useQuestionStore()
 
     return <div className={`flex ${state ? "" : "m-1 bg-base-300"} bg-base-100 rounded-xl p-5 shadow shadow-slate-700 flex-col gap-3`}>
         {/* question */}
         <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center">
-                <div className="text-lg font-bold">Question</div>
+                <div className="text-lg font-bold">Question {number + 1}</div>
                 {state && <div><button onClick={() => removeQuestion(q.question_text)} className="btn btn-xs btn-error"><Trash2 size={10} />Remove</button></div>}
             </div>
             <div>{q.question_rich.question || ""}</div>
