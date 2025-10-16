@@ -42,7 +42,7 @@ export default function QuestionDisplayPage() {
                     <div>Getting all questions...</div>
             </div> :
                 questions.map(question => {
-                    return <QuestionCard q={question} />
+                    return <QuestionCard q={question} state={true}/>
                 })
             }
 
