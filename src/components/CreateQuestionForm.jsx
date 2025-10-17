@@ -27,6 +27,7 @@ export default function CreateQuestionForm(){
         e.preventDefault()
         if(!questionText) return  toast.error("You need a question text to create.")
         if(!choice) return toast.error("yu need to have list of choices to create!")
+        if(!subject) return toast.error("please select a subject.")
 
         const options = choice.split("|")        
         const newOptions = choices.map((choice, i) => {
