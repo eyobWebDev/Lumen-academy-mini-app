@@ -13,6 +13,7 @@ export default function QuestionPreviewDrawer({year, subject}){
     const [loading, setLoading] = useState(false)
 
     const handleClick = async () => {
+        if(!subject) return toast.error("please select a subject")
         setLoading(true)
         console.log("questions", questions);
         const {data, error } = await supabase.from("questions").insert(questions) 
