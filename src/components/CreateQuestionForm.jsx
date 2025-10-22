@@ -84,9 +84,10 @@ export default function CreateQuestionForm(){
                 <option value="Chemistry">Chemistry</option>
                 <option value="Physics">Physics</option>
                 <option value="Biology">Biology</option>
+                <option value="Apptitude">Apptitude</option>
             </select>
 
-            <input type="number" className="input input-sm" value={year} onChange={(e) => setYear(e.target.value)} />
+            <input type="text" className="input input-sm" value={year} onChange={(e) => setYear(e.target.value)} />
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col opacity-100 lg:p-2 p-0 gap-3">
