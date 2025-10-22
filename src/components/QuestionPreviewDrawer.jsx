@@ -25,7 +25,7 @@ export default function QuestionPreviewDrawer({year, subject}){
     }
 
     return <Drawer direction='left'>
-        <DrawerTrigger className="flex gap-3 items-center"><Menu size={15} /> Preview the questions </DrawerTrigger>
+        <DrawerTrigger className="flex gap-3 items-center"><Menu size={15} /> Preview </DrawerTrigger>
         
         
         <DrawerContent className={`w-11/12 h-full text-blue-100 border bg-base-300`}>

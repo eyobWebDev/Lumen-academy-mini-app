@@ -7,6 +7,7 @@ import CreateQuestionPage from './pages/CreateQuestionPage'
 import QuestionDisplayPage from './pages/QuestionDisplayPage'
 import { Toaster } from 'sonner'
 import HomePage from './pages/HomePage'
+import UploadBulkQuestions from './components/UploadBulkQuestions'
 
 function App() {
   const [questions, setQuestions] = useState([])
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/create' element={<CreateQuestionPage />} />
         <Route path='/question' element={<QuestionDisplayPage />} />
+        <Route path='/bulk-upload' element={<UploadBulkQuestions />} />
       </Routes>
 
       <Toaster richColors position="top-right" closeButton />
