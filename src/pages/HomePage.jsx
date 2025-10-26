@@ -48,7 +48,7 @@ export default function HomePage(){
                 </div>
             </div>
 
-            <div className="flex items-center justify-around">
+            <div className="flex items-center flex-wrap justify-around">
                 <button className="btn btn-sm btn-primary" onClick={() => navigate("/create")}>Create a question</button>
                 <button className="btn btn-sm btn-primary" onClick={() => navigate("/bulk-upload")}>Upload Bulk question</button>
                 <button className="btn btn-sm btn-link">See all questions</button>

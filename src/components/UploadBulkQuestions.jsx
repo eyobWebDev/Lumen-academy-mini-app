@@ -49,7 +49,7 @@ export default function UploadBulkQuestions(){
                     },
                     correct_answer: components[2],
                     amharic_explanation: components[5],
-                    related_topics: components[6].split("|")
+                    related_topics: components[6] && components[6].split("|")
                 },
                 subject: subject
             }
