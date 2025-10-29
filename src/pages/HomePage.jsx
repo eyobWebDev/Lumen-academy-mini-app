@@ -36,7 +36,7 @@ export default function HomePage(){
 
         <div className="flex items-center mt-2 gap-3">
             <input type="text" className="input input-bordered input-sm" placeholder="subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
-            <input type="number" className="input input-bordered input-sm" placeholder="year" value={year} onChange={(e) => setYear(e.target.value)}/>
+            <input type="text" className="input input-bordered input-sm" placeholder="year" value={year} onChange={(e) => setYear(e.target.value)}/>
             <button onClick={() => navigate(`/question?year=${year}&subject=${subject}`)} className="btn btn-info btn-sm flex items-center gap-3">Go <ArrowRight size={15} /></button>
         </div>
 
